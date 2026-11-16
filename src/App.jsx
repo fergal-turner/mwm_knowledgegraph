@@ -198,7 +198,7 @@ export default function App() {
               <p className="eyebrow">Measuring what Matters</p>
               <h1>Knowledge Graph of Evidence Based Drivers of Learning in Crisis</h1>
             </div>
-            <img src="logo.svg" alt="Logo" style={{height: '60px'}} />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Logo" style={{height: '60px'}} />
           </div>
       </header>
       <div className="workspace">
