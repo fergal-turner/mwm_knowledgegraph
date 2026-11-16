@@ -145,7 +145,7 @@ export default function App() {
               <p className="eyebrow">Source-linked education drivers</p>
               <h1>Knowledge graph</h1>
             </div>
-            <img src="public/data/logo.svg" alt="Logo" style={{height: '60px'}} />
+            <img src="logo.svg" alt="Logo" style={{height: '60px'}} />
           </div>
       </header>
       <div className="workspace">
