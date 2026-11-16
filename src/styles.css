@@ -1,0 +1,39 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172a3a;
+  background: #f3f6f7;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app { height: 100vh; display: flex; flex-direction: column; }
+.header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #dce5e7; }
+h1 { margin: 0.1rem 0 0; font-size: 1.5rem; }
+.eyebrow { color: #4a6970; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.header .eyebrow { margin: 0; }
+.workspace { display: flex; flex: 1; min-height: 0; }
+.graph { flex: 1; min-width: 0; position: relative; }
+.sidebar { width: 340px; overflow-y: auto; padding: 1.5rem; background: white; border-left: 1px solid #dce5e7; line-height: 1.5; }
+.sidebar h2 { font-size: 1.2rem; line-height: 1.3; overflow-wrap: anywhere; }
+.sidebar p, .sidebar dd { font-size: 0.9rem; }
+.notice { border-left: 3px solid #007f79; padding-left: 0.8rem; }
+.detail { margin-bottom: 1rem; }
+dt { font-size: 0.75rem; font-weight: 700; color: #4a6970; text-transform: uppercase; }
+dd { margin: 0.2rem 0 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.status { padding: 1rem; }
+.graph-node { width: 180px; height: 112px; filter: drop-shadow(0 1px 3px #364d5d55); }
+.graph-node-selected { filter: drop-shadow(0 0 5px #172a3a); }
+.node-shape { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; color: #111827; font-size: 10px; font-weight: 650; line-height: 1.2; padding: 20px 34px; overflow: hidden; }
+.shape-triangle { padding: 40px 42px 12px; }
+.shape-diamond { padding: 24px 48px; }
+.shape-circle { padding: 22px 30px; }
+.node-shape span { max-height: 100%; overflow: hidden; }
+.react-flow__handle { opacity: 0; pointer-events: none; }
+.react-flow__edge-path { stroke-width: 1.5; }
+.react-flow__edge.selected .react-flow__edge-path { stroke-width: 3; }
+@media (max-width: 700px) {
+  .workspace { flex-direction: column; }
+  .graph { min-height: 50%; }
+  .sidebar { width: 100%; flex: 1; border-left: 0; border-top: 1px solid #dce5e7; }
+}
