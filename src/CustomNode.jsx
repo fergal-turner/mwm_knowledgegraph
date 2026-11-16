@@ -1,23 +1,27 @@
 import { Handle, Position } from '@xyflow/react';
 
-function textColour(background) {
-  const hex = background.replace('#', '');
-  if (!/^[\da-f]{6}$/i.test(hex)) return '#111827';
-  const [red, green, blue] = [0, 2, 4].map((offset) => parseInt(hex.slice(offset, offset + 2), 16));
-  return (red * 299 + green * 587 + blue * 114) / 1000 < 145 ? '#fff' : '#111827';
-}
-
 export default function CustomNode({ data, selected }) {
   return (
-    <div className={`graph-node${selected ? ' graph-node-selected' : ''}`}>
-      <Handle type="target" position={Position.Left} isConnectable={false} />
+    <div className="graph-node" style={{ pointerEvents: 'auto' }}>
+      {/* Node dot - with handles positioned relative to it */}
       <div
-        className={`node-shape shape-${data.shape}`}
-        style={{ ...data.shapeStyle, backgroundColor: data.colour, color: textColour(data.colour) }}
+        className={`node-dot shape-${data.shape} ${selected ? 'node-dot-selected' : ''}`}
+        style={{ backgroundColor: data.colour, position: 'relative' }}
       >
-        <span>{data.name}</span>
+        {/* Multiple handles at all positions */}
+        <Handle type="target" position={Position.Top} isConnectable={false} />
+        <Handle type="target" position={Position.Bottom} isConnectable={false} />
+        <Handle type="target" position={Position.Left} isConnectable={false} />
+        <Handle type="target" position={Position.Right} isConnectable={false} />
+        
+        <Handle type="source" position={Position.Top} isConnectable={false} />
+        <Handle type="source" position={Position.Bottom} isConnectable={false} />
+        <Handle type="source" position={Position.Left} isConnectable={false} />
+        <Handle type="source" position={Position.Right} isConnectable={false} />
       </div>
-      <Handle type="source" position={Position.Right} isConnectable={false} />
+      
+      {/* Label */}
+      <div className="node-label">{data.name}</div>
     </div>
   );
 }

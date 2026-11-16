@@ -44,6 +44,15 @@ export default function Sidebar({ selected }) {
           </dl>
         </>
       )}
+    <div style={{ marginTop: 'auto', paddingTop: '2rem', textAlign: 'right' }}>
+      <button 
+        className="reset-btn" 
+        onClick={() => window.location.reload()}
+        style={{ marginTop: '1rem' }}
+      >
+        ✕ Reset view
+      </button>
+    </div>
     </aside>
   );
 }
